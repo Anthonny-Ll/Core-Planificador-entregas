@@ -1,0 +1,23 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Base de datos local (se crea sola al arrancar)
+backend/*.db
+
+# Variables de entorno con secretos
+.env
+*.env
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

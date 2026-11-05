@@ -1,0 +1,17 @@
+# Configuración de despliegue en Render (Blueprint).
+# Un solo servicio: compila React y luego FastAPI sirve la página y la API.
+services:
+  - type: web
+    name: planificador-entregas
+    runtime: python
+    plan: free
+    buildCommand: cd frontend && npm install --include=dev && npm run build && cd ../backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/salud
+    envVars:
+      - key: SECRET_KEY        # firma de los tokens de sesión
+        generateValue: true    # Render genera una clave aleatoria
+      - key: ADMIN_EMAIL
+        value: admin@udla.edu.ec
+      - key: ADMIN_PASSWORD    # Render la pide al crear el Blueprint; no queda en el repo
+        sync: false
