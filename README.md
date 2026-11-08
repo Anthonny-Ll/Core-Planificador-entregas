@@ -6,7 +6,7 @@ El estudiante inscribe sus materias del período y carga las entregas del sílab
 
 > Esta versión cubre el **Administrador con validación en el backend** y los **formularios con dropdowns en cascada**. El plan de estudio, las notas y la sincronización con Brightspace son las siguientes etapas del proyecto.
 
-**Demo en línea:** `https://<tu-servicio>.onrender.com` *(reemplazar después del despliegue)*
+**Demo en línea:** https://planificador-entregas.onrender.com
 
 | Rol | Correo | Contraseña |
 |---|---|---|
@@ -192,7 +192,7 @@ pytest -v
 2. En Render: **New → Blueprint** y elegir el repositorio. Render lee `render.yaml`.
 3. Cuando lo pida, escribir el valor de `ADMIN_PASSWORD` (la contraseña del administrador). `SECRET_KEY` la genera Render.
 4. Esperar el build (compila React y luego instala el backend). Un solo servicio sirve la página y la API.
-5. Copiar la URL del servicio en la parte de arriba de este README.
+5. La app queda en https://planificador-entregas.onrender.com
 
 > En el plan gratuito de Render el disco no es permanente: al reiniciarse el servicio, la base SQLite vuelve a crearse con los datos iniciales. Para la demo no es un problema; para datos reales habría que usar PostgreSQL (basta con cambiar `DATABASE_URL`).
 
